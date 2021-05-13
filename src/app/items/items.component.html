@@ -1,0 +1,41 @@
+
+Profile picture : <img [src]="pp" />  
+<br/>
+
+
+<!-- <favourite [isFavourite]="favouriteVal"></favourite> -->
+<br/>
+Comments : <input type="text" [(ngModel)]="mypicture"  /> {{mypicture}}
+<i
+class="glyphicon glyphicon-heart" 
+[class.highlighted]="iLike"
+(click)="onClick()">
+</i>
+<span>{{ totalLikes }}</span>
+
+
+<!-- Profile preview : <img [src]="mypicture"/> <br/> -->
+
+
+
+<!-- <h2> {{title}}</h2> -->
+
+<!-- {{ totalLikes }} -->
+<!--
+
+<ul>
+    <li>{{userdata.uname}}</li>
+     <li>{{userdata.salary}}</li>
+    <li>{{userdata.joinDate}}</li>
+    <li>{{userdata.desc}}</li>
+    <li>{{userdata.uname | lowercase}}</li>
+    <li>{{userdata.salary | number}}</li>
+    <li>{{userdata.salary | currency :'INR'}}</li>
+    <li>{{userdata.salary | currency :'GBP'}}</li>
+    <li>{{userdata.rating | number :'2.2-3'}}</li>
+    <li>{{userdata.joinDate | date : 'MM/yyyy'}}</li>
+    <li>{{userdata}}</li>
+    <li>{{userdata | json}}</li>
+    <li>{{userdata.desc | summary :20}}</li> 
+   
+</ul>-->
