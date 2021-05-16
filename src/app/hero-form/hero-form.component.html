@@ -7,16 +7,36 @@
 <div class="container">
   <div [hidden]="submitted">
     <h1> Form</h1>
+    
+    <!-- <div *ngIf="email.invalid ">
+    <div *ngIf="email.errors.required">email can not be blank</div>
+    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div> 
+    </div>
+-->
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       <div class="form-group">
+        <!-- <label for="email">Email address:</label>
+        <input type="text"class="form-control" formControlName="email" > -->
+        <label for= "email">Email</label>
+        <input type="text" class="form-control" id="name">
+          Email is required
+          <!-- [(ngModel)]="model.name" name="email"
+            #email="ngModel"> -->
+            <!-- <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger"> -->
+         <!-- </div> -->
+
+<br>
         <label for="name">Name</label>
+
         <input type="text" class="form-control" id="name"
                required
                [(ngModel)]="model.name" name="name"
                #name="ngModel">
+               Name is required
+
         <div [hidden]="name.valid || name.pristine"
              class="alert alert-danger">
-          Name is required
         </div>
       </div>
 
@@ -25,6 +45,12 @@
         <input type="text" class="form-control" id="alterEgo"
                [(ngModel)]="model.alterEgo" name="alterEgo">
       </div>
+
+
+          <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+          <!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button> -->
+
+          <button type="submit" class="btn btn-success">Submit</button>
 
       <!-- <div class="form-group">
         <label for="power">Hero Power</label>
@@ -55,30 +81,6 @@
     </form>
   </div> -->
 
-  <div [hidden]="!submitted">
-    <h2>You submitted the following:</h2>
-    <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Password</div>
-      <div class="col-xs-9">{{ model.alterEgo }}</div>
-    </div>
-    <div class="row">
-      <div class="col-xs-3">Gender</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br>
-    <button class="btn btn-primary" (click)="submitted=false">Edit</button>
-  </div>
-
-
-  <div>
-    <form>
-
-    </form>
-  </div>
 
 <hr>
 <style>
@@ -112,9 +114,41 @@
         </div>
 
         <button type="submit" class="btn btn-success">Submit</button>
+        
 
       </form>
   </div>
+
+
+
+
+  <!-- <div [hidden]="!submitted"> -->
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">Name</div>
+      <div class="col-xs-9">{{ model.name }}</div>
+    </div>
+    <div class="row">
+    <div class="row">
+      <div class="col-xs-3">Password</div>
+      <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div>
+    <!-- <div class="row">   <div [hidden]="!submitted"> -->
+<!--
+      <div class="col-xs-3">Gender</div>
+      <div class="col-xs-9">{{ model.power }}</div>
+    </div>
+    <br> -->
+    <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
+
+
+
+  <!-- <div>
+    <form>
+
+    </form>
+  </div> -->
+
 
   <!-- <hr>
   <div class="container">

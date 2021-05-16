@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 import { Hero } from '../hero';
 
@@ -8,6 +9,46 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-form.component.css']
 })
 export class HeroFormComponent {
+  myform: any;
+  email: FormControl | undefined
+  // emailDomainValidator: AsyncValidatorFn | AsyncValidatorFn[] | null | undefined;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.createFormControls();
+    this.createForm();
+  }
+
+  addPage(){
+    console.log("pages is loaded",this.myform.value)
+  }
+  createForm() {
+    email:this.email
+    throw new Error('Method not implemented.');
+  }
+  createFormControls() {
+    this.email = new FormControl("", Validators.required)
+    throw new Error('Method not implemented.');
+  }
+
+
+
+
+  // emailDomainValidator(control: FormControl) {
+  //   let email = control.value;
+  //   if (email && email.indexOf("@") != -1) {
+  //   let [_, domain] = email.split("@");
+  //   if (domain !== "trigyn.com") {
+  //   return {
+  //   emailDomain: {
+  //   parsedDomain: domain
+  //   }
+  //   }
+  //   }
+  //   }
+  //   return null;
+  //   }
 
   powers = ['Male', 'Female',
             'Others'];
