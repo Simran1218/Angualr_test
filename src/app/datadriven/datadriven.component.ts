@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datadriven.component.css']
 })
 export class DatadrivenComponent implements OnInit {
+  
   // myform: any;
   // email: FormControl | undefined
   // // emailDomainValidator: AsyncValidatorFn | AsyncValidatorFn[] | null | undefined;
@@ -46,5 +47,6 @@ export class DatadrivenComponent implements OnInit {
   //   }
   //   return null;
   //   }
+
 
 }

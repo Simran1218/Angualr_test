@@ -9,6 +9,30 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent { 
   title = "Welcome To my page"
+  name = 'Angular Basics' ;
+  months = ["January", "February", "March", "April",
+  "May", "June", "July", "August", "September",
+  "October", "November", "December"];
+
+// isavailable = true;
+// myClickFunction(event) { 
+// on click of the button.
+// alert("Button is clicked");
+// console.log(event);
+
+// isavailable = true;
+// myClickFunction(event: any) {
+//    alert("Button clicked");
+//    console.log(event);
+
+
+
+// }
+// changemonths(_event: any) {
+// alert("Change month  Dropdown");
+// }
+}
+
 
   // @Input()
   // isFavourite  = false ; 
@@ -16,4 +40,3 @@ export class AppComponent {
   //     this.isFavourite =!this.isFavourite;
   // }
 
-}

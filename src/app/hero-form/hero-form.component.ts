@@ -78,5 +78,16 @@ export class HeroFormComponent {
     form.controls.name.value; 
   }
 
+  isavailable = true;
+myClickFunction(event: any) {
+   alert("Do you want to submit");
+   console.log(event);
+
+
+
+}
+changemonths(_event: any) {
+alert("Change month  Dropdown");
+}
 
 }
