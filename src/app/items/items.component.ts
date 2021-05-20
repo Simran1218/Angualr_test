@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./items.component.css']
 })
 export class ItemsComponent implements OnInit {
+  allowNewServe = false;
+  serveCreationStatus = 'Comments:';
+  serverName = '';
+  name = 'Angular Basics' ;
+  months = ["January", "February", "March", "April",
+  "May", "June", "July", "August", "September",
+  "October", "November", "December"];
+
+
   
   userdata = {
     uname : "SIMRAN",
@@ -38,6 +47,13 @@ export class ItemsComponent implements OnInit {
   constructor() { 
     
   }
+  onCreateServe(){
+    this.serveCreationStatus = 'Add commments !   is ' + this.serverName;
+    }
+    OnUpdateServerName(event: Event){
+      this.serverName = (<HTMLInputElement>event.target).value;
+    }
+
 
   ngOnInit(): void {
     

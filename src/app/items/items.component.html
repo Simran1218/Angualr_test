@@ -1,18 +1,38 @@
 
-Profile picture : <img [src]="pp" />  
-<br/>
-
-
-<!-- <favourite [isFavourite]="favouriteVal"></favourite> -->
-<br/>
-Comments : <input type="text" [(ngModel)]="mypicture"  /> {{mypicture}}
-<i
+<div class="container">
+    <div class= "row">
+    Profile picture : <img [src]="pp" />  
+<br> <i
 class="glyphicon glyphicon-heart" 
 [class.highlighted]="iLike"
 (click)="onClick()">
 </i>
 <span>{{ totalLikes }}</span>
 
+<!-- <favourite [isFavourite]="favouriteVal"></favourite> -->
+<input type="text"
+[(ngModel)]="serverName">  
+<button class="btn btn-primary"
+(click)= "onCreateServe()">Comments</button>
+
+<p >  {{ serveCreationStatus }}  </p>
+
+
+<div> Months :
+    <select>
+       <option *ngFor = "let i of months">{{i}}</option>
+    </select>
+ </div>
+ <br/>
+
+</div>
+</div>
+
+<!-- <p>{{ serverName }}</p> -->
+<!-- <p [innerText]= "allowNewServe"></p>   property binding--> 
+
+ <!-- <input type="text" [(ngModel)]="mypicture"  /> -->
+ <!-- {{mypicture}} -->
 
 <!-- Profile preview : <img [src]="mypicture"/> <br/> -->
 

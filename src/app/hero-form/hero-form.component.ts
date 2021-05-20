@@ -1,3 +1,4 @@
+import { flatten } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 
@@ -9,11 +10,17 @@ import { Hero } from '../hero';
   styleUrls: ['./hero-form.component.css']
 })
 export class HeroFormComponent {
+  allowNewServe = false;
   myform: any;
-  email: FormControl | undefined
+  email: FormControl | undefined;
   // emailDomainValidator: AsyncValidatorFn | AsyncValidatorFn[] | null | undefined;
 
-  constructor() { }
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServe = true;
+    }, 70000);
+   }
+
 
   ngOnInit(): void {
     this.createFormControls();

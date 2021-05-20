@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datadriven.component.css']
 })
 export class DatadrivenComponent implements OnInit {
+  serveCreationStatus = 'No servewas created!';
   
   // myform: any;
   // email: FormControl | undefined
@@ -17,6 +18,9 @@ export class DatadrivenComponent implements OnInit {
   //   this.createFormControls();
   //   this.createForm();
    }
+   onCreateServe(){
+    this.serveCreationStatus = 'is created!';
+    }
 
   // addPage(){
   //   console.log("pages is loaded",this.myform.value)

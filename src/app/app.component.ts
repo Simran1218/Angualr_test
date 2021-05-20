@@ -9,11 +9,6 @@ import { Title } from '@angular/platform-browser';
 })
 export class AppComponent { 
   title = "Welcome To my page"
-  name = 'Angular Basics' ;
-  months = ["January", "February", "March", "April",
-  "May", "June", "July", "August", "September",
-  "October", "November", "December"];
-
 // isavailable = true;
 // myClickFunction(event) { 
 // on click of the button.
