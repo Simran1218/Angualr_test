@@ -7,13 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatadrivenComponent implements OnInit {
   serveCreationStatus = 'No servewas created!';
-  
+  activeId = 1;
+  serveStatus: string = 'offine';
   // myform: any;
   // email: FormControl | undefined
   // // emailDomainValidator: AsyncValidatorFn | AsyncValidatorFn[] | null | undefined;
 
-   constructor() { }
+  getServeStatus(){
+    return this.serveStatus; 
+  }
 
+   constructor() { 
+    this.serveStatus = Math.random() > 0.5 ? 'online' : 'offline';
+   }
+getcolor(){
+  return this.serveStatus === 'online' ? 'green' : 'red';
+}
    ngOnInit(): void {
   //   this.createFormControls();
   //   this.createForm();
