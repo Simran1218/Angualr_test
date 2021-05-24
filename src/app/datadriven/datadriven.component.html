@@ -6,17 +6,22 @@
     <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div> 
     </div>
 -->
-<p [ngStyle]="{backgroundColor: getcolor()}">{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
+<form class="d-flex">
+  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Search</button>
+</form>
 
-<div class="header">
+<div class="header" [ngStyle]="{backgroundColor: getcolor()}">
+  <p >{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
+
     <a href="#default" class="logo"></a>
     <div class="header-right">
       <!-- <a class="button" routerLink="#home" routerLinkActive="activebutton">Home</a> -->
       <!-- <a href="#contact">Contact</a> -->
 
       <!-- <button class="btn btn-primary" (click)= "onCreateServe()">Home</button> -->
-      <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton">Home</a> 
-      <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton">About</a>
+      <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton"><button>Home</button></a> 
+      <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton"><button>About</button></a>
 
       <!-- <a href="#about">About</a> -->
     </div>
