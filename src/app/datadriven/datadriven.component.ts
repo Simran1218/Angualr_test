@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datadriven.component.css']
 })
 export class DatadrivenComponent implements OnInit {
+  title = "Welcome To my page"
   serveCreationStatus = 'No servewas created!';
   activeId = 1;
   serveStatus: string = 'offine';

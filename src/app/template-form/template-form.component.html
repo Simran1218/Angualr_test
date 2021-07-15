@@ -1,0 +1,53 @@
+<!-- <p>templae-form works!</p> -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10  col-md-8 col-sm-offset-1 col-ms-offset-2">
+            <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
+               <div class="form-group">
+                   <label for="email">Mail</label>
+                   <input type="email" 
+                   id="email" 
+                   ngModel
+                   name="email"
+                   required
+                   email
+                   class="form-control"
+                   #email="ngModel">
+                   <span class="help-block" *ngIf="!email.valid && email.touched" >Please enter valid email!</span>
+               </div>
+               <div class="form-group">
+                   <label for="subscription">Choose a subscription</label>
+                <select name="subscription" 
+                id="subscription" 
+                [ngModel]= "selectedSubscription"
+                class="form-control">
+                    <option 
+                    *ngFor= "let subscription of subscriptions"
+                    [value] ="subscription">{{ subscription}}</option>
+                </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="Password">Password</label>
+                     <input type="password" 
+                     id="password" 
+                     name="password" 
+                     ngModel 
+                     required 
+                     class="form-control"
+                     #password="ngModel">
+                     <span class="help-block" *ngIf="!password.valid && password.touched" >Please enter valid password!</span>
+
+                 </div>
+                 <div class="radio" *ngFor="let gender of genders">
+                    <label>
+                      <input
+                        type="radio"
+                        [value]="gender">{{ gender }}
+                    </label>
+                  </div>
+                 <p *ngIf ="!signupForm.valid">The form is invalid!</p>
+                 <button class="btn btn-primary" type="submit">Submit</button> 
+            </form>
+        </div>
+</div>
+</div>

@@ -1,16 +1,19 @@
 <nav class="navbar navbar-dark bg-dark">
   <!-- Navbar content -->
+  <!-- <a routerLink= "/datadriven"><button>Back</button></a> -->
 </nav>
 
 
 
 <div class="container">
   <div [hidden]="submitted">
-    <h1> Form</h1>
-    
+
+    <a routerLink="/hero-form">Form</a>
+
+
     <!-- <div *ngIf="email.invalid ">
     <div *ngIf="email.errors.required">email can not be blank</div>
-    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div> 
+    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div>
     </div>
 -->
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
@@ -46,7 +49,7 @@
                [(ngModel)]="model.alterEgo" name="alterEgo">
       </div>
 
-            
+
           <button class="btn btn-primary" (click)="submitted=false" [disabled] = "!allowNewServe">Edit</button>
 
           <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
@@ -121,9 +124,9 @@
         <div>
           <span *ngIf = "isavailable; then condition1 else condition2"></span>
           <ng-template #condition1>Condition valid</ng-template>
-          <ng-template #condition2>Condition invalid</ng-template> 
+          <ng-template #condition2>Condition invalid</ng-template>
        </div>
-      
+
         <button type="submit" class="btn btn-success"(click)="myClickFunction($event)">Submit</button>
 
       </form>
@@ -132,7 +135,7 @@
  <!-- <div>
     <span *ngIf = "isavailable; then condition1 else condition2">Condition is valid.</span>
     <ng-template #condition1>Condition valid</ng-template>
-    <ng-template #condition2>Condition invalid</ng-template> 
+    <ng-template #condition2>Condition invalid</ng-template>
  </div>
  <button (click)="myClickFunction($event)">Click Me</button>
  </div>  -->

@@ -8,7 +8,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent { 
-  title = "Welcome To my page"
+  // title = "Welcome To my page"
 // isavailable = true;
 // myClickFunction(event) { 
 // on click of the button.
@@ -25,7 +25,7 @@ export class AppComponent {
 // }
 // changemonths(_event: any) {
 // alert("Change month  Dropdown");
-// }
+// }  
 }
 
 

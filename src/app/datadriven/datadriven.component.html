@@ -3,26 +3,63 @@
     <input type="text"class="form-control" formControlName="email" > -->
     <!-- <div *ngIf="email.invalid ">
     <div *ngIf="email.errors.required">email can not be blank</div>
-    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div> 
+    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div>
     </div>
 -->
-<form class="d-flex">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
-</form>
-
-<div class="header" [ngStyle]="{backgroundColor: getcolor()}">
-  <p >{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
-
-    <a href="#default" class="logo"></a>
-    <div class="header-right">
       <!-- <a class="button" routerLink="#home" routerLinkActive="activebutton">Home</a> -->
       <!-- <a href="#contact">Contact</a> -->
 
       <!-- <button class="btn btn-primary" (click)= "onCreateServe()">Home</button> -->
-      <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton"><button>Home</button></a> 
-      <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton"><button>About</button></a>
+      <!-- <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton"><button>Home</button></a>
+      <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton"><button>About</button></a> -->
+      <!-- <a routerLink="/datadriven"> -->
+
+      <!-- <a routerLink="/item"><button>About</button></a> -->
 
       <!-- <a href="#about">About</a> -->
-    </div>
+<!--
+<div class="search-container">
+  <form class="search-form">
+    <span class="logo" routerLink="/">NgVGOB</span>
+    <input class="search-input"
+    name=search
+    ngModel
+    placeholder="Search 500,000+ games" />
+    <button class="search-button">Search</button>
+  </form>
+</div> -->
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+    <h1 style="text-align:center">{{title}}</h1>
   </div>
+</div>
+<!-- <nav class="navbar navbar-default"> -->
+    <div class="row">
+      <div class="congtainer">
+        <div class="col-md-12">
+          <div class="header" [ngStyle]="{backgroundColor: getcolor()}">
+            <p >{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
+              <a href="#default" class="logo"></a>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                <div class="header-right">
+                  <a routerLink="/hero-form"><button>Form</button></a>
+                  <a routerLink="/items"><button>About</button></a>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
