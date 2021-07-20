@@ -11,12 +11,15 @@ import { TemplateFormComponent } from './template-form/template-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+
     // HttpClientModule
 
 
@@ -28,7 +31,9 @@ import { AboutComponent } from './about/about.component';
     DatadrivenComponent,
     TemplateFormComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    AuthComponent,
+
   ],
   providers: [],
   bootstrap: [ AppComponent ]

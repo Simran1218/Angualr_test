@@ -1,210 +1,46 @@
-<nav class="navbar navbar-dark bg-dark">
-  <!-- Navbar content -->
-  <!-- <a routerLink= "/datadriven"><button>Back</button></a> -->
-</nav>
-
-
-
 <div class="container">
   <div [hidden]="submitted">
-
-    <a routerLink="/hero-form">Form</a>
-
-
-    <!-- <div *ngIf="email.invalid ">
-    <div *ngIf="email.errors.required">email can not be blank</div>
-    <div *ngIf="email.errors.emailDomain">Please Enter valid trigyn email </div>
-    </div>
--->
+    <!-- <a routerLink="/hero-form">Form</a> -->
     <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
       <div class="form-group">
-        <!-- <label for="email">Email address:</label>
-        <input type="text"class="form-control" formControlName="email" > -->
         <label for= "email">Email</label>
-        <input type="text" class="form-control" id="name">
+          <input type="text" class="form-control" id="name">
           Email is required
-          <!-- [(ngModel)]="model.name" name="email"
-            #email="ngModel"> -->
-            <!-- <div [hidden]="name.valid || name.pristine"
-            class="alert alert-danger"> -->
-         <!-- </div> -->
-
-<br>
-        <label for="name">Name</label>
-
-        <input type="text" class="form-control" id="name"
-               required
-               [(ngModel)]="model.name" name="name"
-               #name="ngModel">
-               Name is required
-
-        <div [hidden]="name.valid || name.pristine"
-             class="alert alert-danger">
+          <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          </div>
         </div>
-      </div>
-
-      <div class="form-group">
+        <div class="form-group">
         <label for="alterEgo">Password</label>
-        <input type="text" class="form-control" id="alterEgo"
-               [(ngModel)]="model.alterEgo" name="alterEgo">
+        <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo" required>
+        password is required
+        <br>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+        </div>
+        <br>
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+         required
+         [(ngModel)]="model.name" name="name"
+          #name="ngModel">
       </div>
-
-
-          <button class="btn btn-primary" (click)="submitted=false" [disabled] = "!allowNewServe">Edit</button>
-
-          <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
-          <!-- <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button> -->
-
-          <!-- <button type="submit" class="btn btn-success">Submit</button> -->
-          <button type="submit" class="btn btn-success"(click)="myClickFunction($event)">Submit</button>
-
-
-      <!-- <div class="form-group">
-        <label for="power">Hero Power</label>
-        <select class="form-control" id="power"
-                required
-                [(ngModel)]="model.power" name="power"
-                #power="ngModel">
-          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-        </select>
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
-          Power is required
-        </div>
+      <div class="radio" *ngFor="let gender of genders">
+        <label>
+          <input
+            type="radio"
+            [value]="gender">{{ gender }}
+        </label>
       </div>
-
-      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
-      <i>with</i> reset
-
-      &nbsp;&nbsp;
-      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
-      <i>without</i> reset -->
-
-     <!-- NOT SHOWN IN DOCS -->
-      <!-- <div>
-        <hr>
-        Name via form.controls = {{showFormControls(heroForm)}}
-      </div>
-    </form>
-  </div> -->
-
-
-<hr>
-<style>
-  .no-style .ng-valid {
-  border-left: 1px  solid #CCC
-}
-
-  .no-style .ng-invalid {
-  border-left: 1px  solid #CCC
-}
-</style>
-<div class="no-style" style="margin-left: 4px">
-  <div class="container">
-      <h1>DataForm</h1>
-      <form>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="alterEgo">Password</label>
-          <input type="text" class="form-control" id="alterEgo">
-        </div>
-
-        <div class="form-group">
-          <label for="power">Gender</label>
-          <select class="form-control" id="power" required>
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-          </select>
-        </div>
-
-        <!-- <button type="submit" class="btn btn-success">Submit</button> -->
-        <div>
-          <span *ngIf = "isavailable; then condition1 else condition2"></span>
-          <ng-template #condition1>Condition valid</ng-template>
-          <ng-template #condition2>Condition invalid</ng-template>
-       </div>
-
-        <button type="submit" class="btn btn-success"(click)="myClickFunction($event)">Submit</button>
-
-      </form>
-  </div>
-
- <!-- <div>
-    <span *ngIf = "isavailable; then condition1 else condition2">Condition is valid.</span>
-    <ng-template #condition1>Condition valid</ng-template>
-    <ng-template #condition2>Condition invalid</ng-template>
- </div>
- <button (click)="myClickFunction($event)">Click Me</button>
- </div>  -->
-
-
-
-  <!-- <div [hidden]="!submitted"> -->
+            <button class="btn btn-primary" (click)="submitted=false" [disabled] = "!allowNewServe">Edit</button>
+      <button type="submit" class="btn btn-success"(click)="myClickFunction($event)">Submit</button>
+</form>
+</div>
+</div>
     <h2>You submitted the following:</h2>
     <div class="row">
-      <div class="col-xs-3">Name</div>
-      <div class="col-xs-9">{{ model.name }}</div>
+      <div class="col-xs-3">email</div>
+      <div class="col-xs-9">{{ model.name  }}</div>
     </div>
-    <div class="row">
     <div class="row">
       <div class="col-xs-3">Password</div>
       <div class="col-xs-9">{{ model.alterEgo }}</div>
     </div>
-    <!-- <div class="row">   <div [hidden]="!submitted"> -->
-<!--
-      <div class="col-xs-3">Gender</div>
-      <div class="col-xs-9">{{ model.power }}</div>
-    </div>
-    <br> -->
-    <!-- <button class="btn btn-primary" (click)="submitted=false">Edit</button> -->
-
-
-
-  <!-- <div>
-    <form>
-
-    </form>
-  </div> -->
-
-
-  <!-- <hr>
-  <div class="container">
-      <h1>Hero Form</h1>
-      <form #heroForm="ngForm">
-        {{diagnostic}}
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name"
-                 required
-                 [(ngModel)]="model.name" name="name">
-        </div>
-
-        <div class="form-group">
-          <label for="alterEgo">Alter Ego</label>
-          <input type="text"  class="form-control" id="alterEgo"
-                 [(ngModel)]="model.alterEgo" name="alterEgo">
-        </div>
-
-        <div class="form-group">
-          <label for="power">Hero Power</label>
-          <select class="form-control"  id="power"
-                  required
-                  [(ngModel)]="model.power" name="power">
-            <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
-
-      </form>
-  </div> -->
-
-  <!-- <hr>
-    <input type="text" class="form-control" id="name"
-           required
-           [(ngModel)]="model.name" name="name">
-    TODO: remove this: {{model.name}}
-  <hr> -->

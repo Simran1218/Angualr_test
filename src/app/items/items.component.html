@@ -1,9 +1,12 @@
+<div class="header" [ngStyle]="{backgroundColor: getcolor()}">
+  <p >{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
+    <a href="#default" class="logo"></a>
 
 <div class="container">
     <div class= "row">
-    Profile picture : <img [src]="pp" />  
+    Profile picture : <img [src]="pp" />
 <br> <i
-class="glyphicon glyphicon-heart" 
+class="glyphicon glyphicon-heart"
 [class.highlighted]="iLike"
 (click)="onClick()">
 </i>
@@ -11,7 +14,7 @@ class="glyphicon glyphicon-heart"
 
 <!-- <favourite [isFavourite]="favouriteVal"></favourite> -->
 <input type="text"
-[(ngModel)]="serverName">  
+[(ngModel)]="serverName">
 <button class="btn btn-primary"
 (click)= "onCreateServe()">Comments</button>
 
@@ -31,7 +34,7 @@ class="glyphicon glyphicon-heart"
 
 
 <!-- <p>{{ serverName }}</p> -->
-<!-- <p [innerText]= "allowNewServe"></p>   property binding--> 
+<!-- <p [innerText]= "allowNewServe"></p>   property binding-->
 
  <!-- <input type="text" [(ngModel)]="mypicture"  /> -->
  <!-- {{mypicture}} -->
@@ -58,6 +61,6 @@ class="glyphicon glyphicon-heart"
     <li>{{userdata.joinDate | date : 'MM/yyyy'}}</li>
     <li>{{userdata}}</li>
     <li>{{userdata | json}}</li>
-    <li>{{userdata.desc | summary :20}}</li> 
-   
+    <li>{{userdata.desc | summary :20}}</li>
+
 </ul>-->

@@ -5,8 +5,8 @@
             <form #signupForm="ngForm" (ngSubmit)="onSubmit()">
                <div class="form-group">
                    <label for="email">Mail</label>
-                   <input type="email" 
-                   id="email" 
+                   <input type="email"
+                   id="email"
                    ngModel
                    name="email"
                    required
@@ -17,26 +17,25 @@
                </div>
                <div class="form-group">
                    <label for="subscription">Choose a subscription</label>
-                <select name="subscription" 
-                id="subscription" 
-                [ngModel]= "selectedSubscription"
-                class="form-control">
-                    <option 
+                <select name="subscription"
+                  id="subscription"
+                  [ngModel]= "selectedSubscription"
+                  class="form-control">
+                    <option
                     *ngFor= "let subscription of subscriptions"
                     [value] ="subscription">{{ subscription}}</option>
                 </select>
                  </div>
                  <div class="form-group">
                      <label for="Password">Password</label>
-                     <input type="password" 
-                     id="password" 
-                     name="password" 
-                     ngModel 
-                     required 
+                     <input type="password"
+                     id="password"
+                     name="password"
+                     ngModel
+                     required
                      class="form-control"
                      #password="ngModel">
                      <span class="help-block" *ngIf="!password.valid && password.touched" >Please enter valid password!</span>
-
                  </div>
                  <div class="radio" *ngFor="let gender of genders">
                     <label>
@@ -46,8 +45,8 @@
                     </label>
                   </div>
                  <p *ngIf ="!signupForm.valid">The form is invalid!</p>
-                 <button class="btn btn-primary" type="submit">Submit</button> 
+                 <button class="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
-</div>
+  </div>
 </div>
