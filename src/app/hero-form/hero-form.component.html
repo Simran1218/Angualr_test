@@ -27,7 +27,8 @@
         <label>
           <input
             type="radio"
-            [value]="gender">{{ gender }}
+            [value]="gender"
+            [(ngModel)]="model.genders">{{ gender }}
         </label>
       </div>
             <button class="btn btn-primary" (click)="submitted=false" [disabled] = "!allowNewServe">Edit</button>
@@ -43,4 +44,8 @@
     <div class="row">
       <div class="col-xs-3">Password</div>
       <div class="col-xs-9">{{ model.alterEgo }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">Gender</div>
+      <div class="col-xs-9">{{ model.genders}}</div>
     </div>

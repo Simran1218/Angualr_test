@@ -6,6 +6,7 @@ import { DatadrivenComponent } from './datadriven/datadriven.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HomeComponent } from './home/home.component';
 import { ItemsComponent } from './items/items.component';
+import { ProfileComponent } from './profile/profile.component';
 import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes: Routes = [
@@ -18,6 +19,8 @@ const routes: Routes = [
 {path: 'hero-form', component: HeroFormComponent},
  {path: 'home', component: HomeComponent},
  {path: 'about', component: AboutComponent},
+ {path: 'profile', component: ProfileComponent},
+ {path: 'item', component: ItemsComponent},
  {path: 'template_form', component: TemplateFormComponent},
 
 //  {

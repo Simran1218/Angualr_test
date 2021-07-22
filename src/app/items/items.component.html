@@ -1,66 +1,48 @@
-<div class="header" [ngStyle]="{backgroundColor: getcolor()}">
-  <p >{{ 'Active' }} with id {{ activeId }} is {{ getServeStatus() }}</p>
-    <a href="#default" class="logo"></a>
-
-<div class="container">
-    <div class= "row">
-    Profile picture : <img [src]="pp" />
-<br> <i
-class="glyphicon glyphicon-heart"
-[class.highlighted]="iLike"
-(click)="onClick()">
-</i>
-<span>{{ totalLikes }}</span>
-
-<!-- <favourite [isFavourite]="favouriteVal"></favourite> -->
-<input type="text"
-[(ngModel)]="serverName">
-<button class="btn btn-primary"
-(click)= "onCreateServe()">Comments</button>
-
-<p >  {{ serveCreationStatus }}  </p>
-
-
-<div> Months :
-    <select>
-       <option *ngFor = "let i of months">{{i}}</option>
-    </select>
- </div>
- <br/>
-
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="item.imagePath"
+      alt="{{ item.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
 </div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{ item.name }}</h1>
+  </div>
 </div>
-<router-outlet></router-outlet>
-
-
-<!-- <p>{{ serverName }}</p> -->
-<!-- <p [innerText]= "allowNewServe"></p>   property binding-->
-
- <!-- <input type="text" [(ngModel)]="mypicture"  /> -->
- <!-- {{mypicture}} -->
-
-<!-- Profile preview : <img [src]="mypicture"/> <br/> -->
-
-
-
-<!-- <h2> {{title}}</h2> -->
-
-<!-- {{ totalLikes }} -->
-<!--
-
-<ul>
-    <li>{{userdata.uname}}</li>
-     <li>{{userdata.salary}}</li>
-    <li>{{userdata.joinDate}}</li>
-    <li>{{userdata.desc}}</li>
-    <li>{{userdata.uname | lowercase}}</li>
-    <li>{{userdata.salary | number}}</li>
-    <li>{{userdata.salary | currency :'INR'}}</li>
-    <li>{{userdata.salary | currency :'GBP'}}</li>
-    <li>{{userdata.rating | number :'2.2-3'}}</li>
-    <li>{{userdata.joinDate | date : 'MM/yyyy'}}</li>
-    <li>{{userdata}}</li>
-    <li>{{userdata | json}}</li>
-    <li>{{userdata.desc | summary :20}}</li>
-
-</ul>-->
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Manage Item <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Show List</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditItem()">Edit </a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteItem()">Delete</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{ item.description }}
+  </div>
+</div>
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let ingredient of item.ingredients">
+        {{ post.name }}
+      </li>
+    </ul>
+  </div>
+</div> -->

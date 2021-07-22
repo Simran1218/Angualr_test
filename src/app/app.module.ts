@@ -13,12 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthComponent } from './auth/auth.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+
 
     // HttpClientModule
 
@@ -27,12 +31,12 @@ import { AuthComponent } from './auth/auth.component';
   declarations: [
     AppComponent,
     HeroFormComponent,
-    ItemsComponent,
     DatadrivenComponent,
     TemplateFormComponent,
     HomeComponent,
     AboutComponent,
     AuthComponent,
+    ProfileComponent
 
   ],
   providers: [],

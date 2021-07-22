@@ -49,5 +49,4 @@ myClickFunction(event: any) {
    console.log(event);
 
 }
-
 }
